@@ -30,6 +30,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+INSTALLED_APPS += [
+    'books',
+    'rest_framework',
+    'corsheaders',
+]
+
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000']  # Vue 前端地址
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
